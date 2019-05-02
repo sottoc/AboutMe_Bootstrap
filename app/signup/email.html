@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>GO - Inner Pages</title>
+    <link rel="stylesheet" href="../assets/css/vendor.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+  </head>
+  <body class="bg-light">
+
+    <!-- header -->
+    <div id="header2"></div>
+    <!-- header -->
+
+    <section class="bg-purple">
+        
+    </section>
+
+    <section id="default" class="component">
+        <div class="tab-content">
+            <div class="tab-pane show active" role="tabpanel">
+                <div class="component-example">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="progress-item mb-3">
+                                    <div class="progress">
+                                        <div class="progress-bar bg-yellow" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="100"><span class="text-blue">step 1</span></div>
+                                    </div>
+                                </div>
+                                <h5>Sign up with your email</h5>
+                                <div class="input-group mb-1">
+                                    <input type="email" class="form-control" onkeydown="changeEmail()" placeholder="Enter email address" aria-describedby="basic-addon1">
+                                </div>
+                                <p id="email_required_tips" class="text-red">An email address is required.</p>
+                                <p id="email_validate_tips" class="text-red">Please enter a valid email address.</p>
+                                <p id="email_existing_tips" class="text-red">That email address is already in use.</p>
+                                <br>
+                                <p>We will not share or display your email address.</p>
+                                <div class="input-group mb-3">
+                                    <input type="button" class="form-control btn-primary" onclick="next()" value="Next">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="../assets/js/vendor.js"></script>
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/custom/global.js"></script>
+    <script src="../assets/js/custom/email.js"></script>
+  </body>
+</html>
