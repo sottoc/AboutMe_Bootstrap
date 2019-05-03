@@ -6,6 +6,8 @@ $(function(){
     for(var i=1;i<=10;i++){
         progressBar(i);
     }
+    var signup_model = JSON.parse(localStorage.getItem("signup_model"));
+    $('input[type="email"]').val(signup_model['email_address']);
 });
 
 function changeEmail(){
@@ -27,5 +29,8 @@ function next(){
         $('input[type="email"]').focus();
         return;
     }
-    window.location.replace("/signup/name.html");
+    var signup_model = JSON.parse(localStorage.getItem("signup_model"));
+    signup_model['email_address'] = email;
+    localStorage.setItem("signup_model", JSON.stringify(signup_model));
+    window.location.href = "/signup/name.html";
 }

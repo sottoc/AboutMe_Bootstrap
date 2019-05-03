@@ -5,6 +5,9 @@ $(function(){
     for(var i=11;i<=20;i++){
         progressBar(i);
     }
+    var signup_model = JSON.parse(localStorage.getItem("signup_model"));
+    $($('input[type="text"]')[0]).val(signup_model["first_name"]);
+    $($('input[type="text"]')[1]).val(signup_model["last_name"]);
 });
 
 function changeFirstName(){
@@ -22,11 +25,15 @@ function next(){
         $($('input[type="text"]')[0]).focus();
         return;
     }
-    var secondname = $($('input[type="text"]')[1]).val();
-    if(secondname == ""){
+    var lastname = $($('input[type="text"]')[1]).val();
+    if(lastname == ""){
         $("#secondname_required_tips").show();
         $($('input[type="text"]')[1]).focus();
         return;
     }
-    window.location.replace("/signup/photo.html");
+    var signup_model = JSON.parse(localStorage.getItem("signup_model"));
+    signup_model['first_name'] = firstname;
+    signup_model['last_name'] = lastname;
+    localStorage.setItem("signup_model", JSON.stringify(signup_model));
+    window.location.href = "/signup/photo.html";
 }
