@@ -1,0 +1,11 @@
+.interests-buttons .btn-info{
+    color: #5ca7cc;
+    background-color: #ffff;
+    border-color: #17a2b8;
+}
+
+.btn.interests.selected{
+    color: #fff;
+    background-color: #117a8b;
+    border-color: #10707f;
+}

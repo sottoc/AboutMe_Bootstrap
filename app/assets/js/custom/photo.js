@@ -7,7 +7,7 @@ $(function(){
 
     var signup_model = JSON.parse(localStorage.getItem("signup_model"));
     if(signup_model["image"][0] != undefined){
-        $('#img_avatar').attr('src', api_endpoint + "/" + signup_model["image"][0]);
+        $('#img_avatar').attr('src', api_endpoint + signup_model["image"][0]);
         $('input[type="button"]').val("Next");
     }
 
@@ -17,26 +17,31 @@ $(function(){
 
     $('input[type="file"]').change(function(e){
         var file = e.target.files[0];
-        console.log(file);
         formdata = new FormData();
-        formdata.append("file", file);
-        var url = api_endpoint + "/api/upload";
-        jQuery.ajax({
-            url: url,
-            type: "POST",
-            data: formdata,
-            processData: false,
-            contentType: false,
-            success: function (result) {
-                var filepath = api_endpoint + "/" + result;
-                $("#img_avatar").attr('src', filepath);
-                $('input[type="button"]').val("Next");
-                // save image url
-                var signup_model = JSON.parse(localStorage.getItem("signup_model"));
-                signup_model['image'].push(result);
-                localStorage.setItem("signup_model", JSON.stringify(signup_model));
-            }
+        formdata.append("file_type", file.type);
+        formdata.append("file_name", file.name);
+        getBase64(file).then(function(file){
+            formdata.append("file", file);
+            var url = api_endpoint + "/api/upload";
+            jQuery.ajax({
+                url: url,
+                type: "POST",
+                data: formdata,
+                processData: false,
+                contentType: false,
+                success: function (result) {
+                    console.log(result);
+                    var filepath = api_endpoint + result;
+                    $("#img_avatar").attr('src', filepath);
+                    $('input[type="button"]').val("Next");
+                    // save image url
+                    var signup_model = JSON.parse(localStorage.getItem("signup_model"));
+                    signup_model['image'][0] = result;
+                    localStorage.setItem("signup_model", JSON.stringify(signup_model));
+                }
+            });
         });
+        
     });
 });
 

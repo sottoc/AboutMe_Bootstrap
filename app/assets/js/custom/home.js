@@ -6,7 +6,11 @@ $(function(){
         last_name: "",
         email_address: "",
         image: [],
-        location: ""
+        location: "",
+        interests: [],
+        roles: [],
+        spotlight: {},
+        
     }
     localStorage.setItem("signup_model", JSON.stringify(signup_model));
 });

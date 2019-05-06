@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="../assets/css/vendor.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
 
+    <!--  include custom css -->
+    <link rel="stylesheet" href="../assets/css/custom/global.css" />
+
   </head>
   <body class="bg-light">
 
@@ -18,23 +21,30 @@
         
     </section>
 
-    <section id="default" class="component">
+    <section id="default" class="component" style="padding: 30px;">
         <div class="tab-content">
             <div class="tab-pane show active" role="tabpanel">
                 <div class="component-example">
                     <div class="container text-center">
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="progress-item mb-3">
+                                <div class="progress-item mb-5">
                                     <div class="progress">
-                                        <div class="progress-bar bg-yellow" role="progressbar" style="width: 31%;" aria-valuemin="0" aria-valuemax="100"><span class="text-blue">step 4</span></div>
+                                        <div class="progress-bar bg-yellow" role="progressbar" style="width: 41%;" aria-valuemin="0" aria-valuemax="100"><span class="text-blue">step 5</span></div>
                                     </div>
                                 </div>
-                                <h5>Where are you, Firstname?</h5>
+                                <h5>What do you love?</h5>
                                 <div class="input-group mb-1">
-                                    <input type="text" class="form-control" id="address" onkeydown="changeLocation()" placeholder="Enter your location" aria-describedby="basic-addon1">
+                                    <div class="interests-buttons">
+                                       
+                                    </div>
                                 </div>
-                                <p id="location_required_tips" class="text-red">Location is required.</p>
+                                <div class="input-group mb-1">
+                                    <div class="interests-buttons-selected">
+                                        
+                                    </div>
+                                </div>
+                                <br>
                                 <div class="input-group">
                                     <input type="button" class="form-control btn-primary" onclick="next()" value="Next">
                                 </div>
@@ -50,7 +60,6 @@
     <script src="../assets/js/vendor.js"></script>
     <script src="../assets/js/app.js"></script>
     <script src="../assets/js/custom/global.js"></script>
-    <script src="../assets/js/custom/location.js"></script>
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_VYX50VGZMYnPW9dgg0CTDrbb3u__lZg&libraries=places&callback=initAutocomplete1" async defer></script> -->
+    <script src="../assets/js/custom/interests.js"></script>
   </body>
 </html>
