@@ -10,7 +10,7 @@ $(function(){
     var signup_model = JSON.parse(localStorage.getItem("signup_model"));
     var firstname = signup_model['first_name'];
     var lastname = signup_model['last_name'];
-    username = firstname + lastname;
+    username = firstname.toLowerCase() + lastname.toLowerCase();
     $("#username").val(username);
     // check if username is valid
     var formdata = new FormData();
@@ -62,6 +62,7 @@ function changeUsername(e){
             if(data['result'] == true){
                 $("#username_valid_tips").show();
                 $("#username_invalid_tips").css("display", "none");
+                var signup_model = JSON.parse(localStorage.getItem("signup_model"));
                 signup_model.username = username;
                 localStorage.setItem("signup_model", JSON.stringify(signup_model));
             } else{
