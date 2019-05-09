@@ -10,6 +10,9 @@ $(function(){
         interests: [],
         roles: [],
         spotlight: {},
+        spotlight_link: "",
+        username: "",
+        password: ""
         
     }
     localStorage.setItem("signup_model", JSON.stringify(signup_model));

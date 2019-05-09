@@ -8,6 +8,9 @@ $(function(){
     var signup_model = JSON.parse(localStorage.getItem("signup_model"));
     $($('input[type="text"]')[0]).val(signup_model["first_name"]);
     $($('input[type="text"]')[1]).val(signup_model["last_name"]);
+    if($($('input[type="text"]')[0]).val() == ""){
+        $($('input[type="text"]')[0]).focus();
+    }
 });
 
 function changeFirstName(){

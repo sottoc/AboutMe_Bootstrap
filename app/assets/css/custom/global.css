@@ -1,6 +1,40 @@
+.component .tab-content{
+    width: 580px;
+    margin: auto;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 580px) {
+    .component .tab-content{
+        width: 100%;
+    }
+}
+
+.component .tab-content.wide-component{
+    width: 880px;
+    margin: auto;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 880px) {
+    .component .tab-content.wide-component{
+        width: 100%;
+    }
+}
+
+.component .tab-content .tab-pane{
+    box-shadow: 0px 0px 10px 0px rgba(19, 22, 29, 0.34);
+    border-radius: 7px;
+    border: 1px #b9b4bf solid
+}
+
+.component .tab-content .tab-pane .component-example{
+    padding: 40px 10px;
+}
+
 /* interests page of sign up */
 .interests-buttons .btn-info{
-    color: #5ca7cc;
+    color: #09658a;
     background-color: #ffff;
     border-color: #17a2b8;
 }
@@ -13,7 +47,7 @@
 
 /* roles page of sign up */
 .roles-buttons .btn-info{
-    color: #5ca7cc;
+    color: #09658a;
     background-color: #ffff;
     border-color: #17a2b8;
 }
@@ -22,4 +56,14 @@
     color: #fff;
     background-color: #117a8b;
     border-color: #10707f;
+}
+
+/* username page of sign up */
+.input-group-text#basic-domain{
+    padding-right: 2px;
+    background: white;
+}
+
+#username{
+    padding-left: 2px;
 }

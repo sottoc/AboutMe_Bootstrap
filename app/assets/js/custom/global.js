@@ -1,7 +1,10 @@
 var api_endpoint = "http://localhost:8000";
+var domain = "http://localhost:3000";
 
 $(function(){
-
+    if(localStorage.getItem("signup_model") == undefined){
+        window.location.href = "/";
+    }
 });
 
 function gotoSignup(){

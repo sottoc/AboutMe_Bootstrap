@@ -67,5 +67,5 @@ function next(){
    var signup_model = JSON.parse(localStorage.getItem("signup_model"));
    signup_model.roles = selected_roles;
    localStorage.setItem("signup_model", JSON.stringify(signup_model));
-   window.location.href = "/signup/roles.html";
+   window.location.href = "/signup/spotlight.html";
 }

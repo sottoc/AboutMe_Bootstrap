@@ -1,4 +1,4 @@
-var interests = ["Photography", "Technology", "Design", "Music", "Travel", "Arts", "Reading", "Food", "Movies", "Cycling", "Writing", "Running", "Fitness", "Coffee", "Politics", "Acting", "Dancing"];
+var interests = ["Photography", "Technology", "Design", "Music", "Travel", "Arts", "Reading", "Food", "Movies", "Cycling", "Writing", "Running", "Fitness", "Coffee", "Politics", "Acting", "Dancing", "Animals", "Painting", "Baseball", "Basketball", "Cats", "Soccer", "Football", "Game", "Baking", "Sewing", "Video Gaming", "Skiing", "Sailing", "Singing"];
 var selected_interests = [];
 $(function(){
     $("#header2").load("../layout/header2.html");

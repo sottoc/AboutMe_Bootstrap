@@ -22,3 +22,22 @@
 .input-group .component .boxed.selected{
     background: #bfb9ea;
 }
+
+.modal-header{
+    padding-bottom: 0px;
+}
+
+#selected_spotlight{
+    color: #4829B2;
+    font-size:25px;
+}
+
+#selected_spotlight p{
+    font-size:18px;
+}
+
+@media (min-width: 1600px) {
+    .component {
+        max-width: 100%;
+    }
+}

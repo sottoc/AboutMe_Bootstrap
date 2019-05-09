@@ -6,7 +6,7 @@ $(function(){
     }
     var signup_model = JSON.parse(localStorage.getItem("signup_model"));
     $('input[type="text"]').val(signup_model["location"]);
-    //window.initAutocomplete1 = initAutocomplete;
+    window.initAutocomplete1 = initAutocomplete;
 });
 
 function changeLocation(){
@@ -26,14 +26,14 @@ function next(){
     window.location.href = "/signup/interests.html";
 }
 
-// function initAutocomplete() {
-//     autocomplete2 = new google.maps.places.Autocomplete((document.getElementById('address')), {types: ['geocode']});
-//     autocomplete2.addListener('place_changed', this.fillInAddress);
-// }
+function initAutocomplete() {
+    autocomplete2 = new google.maps.places.Autocomplete((document.getElementById('address')), {types: ['geocode']});
+    autocomplete2.addListener('place_changed', this.fillInAddress);
+}
 
-// function fillInAddress(){
-//     var place = autocomplete2.getPlace();
-//     console.log(place);
-//     var site_address = place.formatted_address;
-//     console.log(site_address);
-// }
+function fillInAddress(){
+    var place = autocomplete2.getPlace();
+    console.log(place);
+    var site_address = place.formatted_address;
+    console.log(site_address);
+}

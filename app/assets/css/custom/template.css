@@ -1,0 +1,21 @@
+.template-design{
+    transform: scale(0.6);
+    cursor: pointer;
+    border: 1px solid #452b98;
+    padding: 10px;
+}
+
+.template-design:hover{
+    transform: scale(0.9);
+}
+
+.template-design .card a{
+    margin: auto;
+    width: 50%;
+}
+
+.template-design .user {
+    width: 200px !important;
+    height: 200px !important;
+    margin: auto !important;
+}

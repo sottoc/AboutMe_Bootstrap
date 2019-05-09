@@ -6,6 +6,7 @@ $(function(){
     for(var i=1;i<=10;i++){
         progressBar(i);
     }
+    $('input[type="email"]').focus();
     var signup_model = JSON.parse(localStorage.getItem("signup_model"));
     $('input[type="email"]').val(signup_model['email_address']);
 });
@@ -29,8 +30,27 @@ function next(){
         $('input[type="email"]').focus();
         return;
     }
-    var signup_model = JSON.parse(localStorage.getItem("signup_model"));
-    signup_model['email_address'] = email;
-    localStorage.setItem("signup_model", JSON.stringify(signup_model));
-    window.location.href = "/signup/name.html";
+
+    var formdata = new FormData();
+    formdata.append("email", email);
+    var url = api_endpoint + "/api/email_check";
+    jQuery.ajax({
+        url: url,
+        type: "POST",
+        data: formdata,
+        processData: false,
+        contentType: false,
+        success: function (data) {
+            data = JSON.parse(data)
+            if(data['result'] == true){
+                $("#email_existing_tips").show();
+                $('input[type="email"]').focus();
+            } else{
+                var signup_model = JSON.parse(localStorage.getItem("signup_model"));
+                signup_model['email_address'] = email;
+                localStorage.setItem("signup_model", JSON.stringify(signup_model));
+                window.location.href = "/signup/name.html";
+            }
+        }
+    });
 }
