@@ -1,5 +1,9 @@
 var username = "";
 $(function(){
+    if(checkUserToken()){
+        window.location.href = "../profile";
+        return;
+    }
     $("#header2").load("../layout/header2.html");
     $("#username_valid_tips").css("display", "none");
     $("#username_invalid_tips").css("display", "none");

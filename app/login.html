@@ -6,7 +6,7 @@
     <title>Sign In</title>
     <link rel="stylesheet" href="assets/css/vendor.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
-
+    
     <link rel="stylesheet" href="assets/css/custom/global.css" />
 
   </head>
@@ -32,20 +32,25 @@
                         <div class="col-md-12">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"></span>
+                                    <span class="input-group-text" id="basic-addon1">@</span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Username or Email" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" id="login_email" placeholder="Username or Email" aria-label="Username" aria-describedby="basic-addon1">
                             </div>
 
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1">@</span>
                                 </div>
-                                <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+                                <input type="password" class="form-control" id="login_password" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+                            </div>
+
+                            <div class="input-group mb-1">
+                                <p id="warning_tip" class="text-red" style="margin:auto;"> This is warging  </p>
                             </div>
         
                             <div class="input-group mb-3">
-                                <input type="button" class="form-control btn-primary" value="Log In">
+                                
+                                <input type="button" class="form-control btn-primary" onclick="clickLogin()" value="Log In">
                             </div>
                             <ul class="list-group list-group-minimal">
                                 <li class="list-group-item"><a href="" data-toggle="modal" data-target="#exampleModal">Forgot Password?</a></li>
@@ -76,8 +81,7 @@
                     <h3>Find your account</h3>
                 </div>
                 <div class="modal-body text-center">
-                    
-                    <input type="text" class="form-control" placeholder="Username or Email">
+                    <input type="text" class="form-control" placeholder="Username or Email" id="email_for_find">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary btn-block">Send password reset email</button>
@@ -89,6 +93,8 @@
 
     <script src="assets/js/vendor.js"></script>
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/custom/global.js"></script>
     <script src="assets/js/custom/login.js"></script>
   </body>
 </html>

@@ -1,7 +1,11 @@
 $(function(){
+    if(checkUserToken()){
+        $("#header").load("layout/header1_in.html");
+    } else{
+        $("#header").load("layout/header.html");
+    }
     $("#custom_footer").load("layout/footer.html");
     var signup_model = {
-        username: "",
         first_name: "",
         last_name: "",
         email_address: "",

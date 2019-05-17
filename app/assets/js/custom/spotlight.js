@@ -1,6 +1,10 @@
 var spotlight = {};
 var spotlight_link = "";
 $(function(){
+    if(checkUserToken()){
+        window.location.href = "../profile";
+        return;
+    }
     $("#header2").load("../layout/header2.html");
     $("#location_required_tips").css("display", "none");
     for(var i=61;i<=70;i++){

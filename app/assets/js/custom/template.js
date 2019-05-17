@@ -1,5 +1,9 @@
 var temp = [];
 $(function(){
+    if(checkUserToken()){
+        window.location.href = "../profile";
+        return;
+    }
     $("#header2").load("../layout/header2.html");
     for(var i=71;i<=80;i++){
         progressBar(i);
@@ -20,7 +24,7 @@ $(".template-design").click(function(){
 });
 
 function next(){
-    if(!temp == []){
+    if(!temp.length == 0){
         var signup_model = JSON.parse(localStorage.getItem("signup_model"));
         signup_model['template'] = temp;
         localStorage.setItem("signup_model", JSON.stringify(signup_model));

@@ -1,6 +1,10 @@
 var roles = ["Student", "Web Developer", "Software Engineer", "Project Manager", "Consultant", "Designer", "Art Director", "Artist", "Architect", "Teacher", "Writer", "Editor", "Director", "Mother", "Father", "Musician", "Dancer", "Photographer", "Chef", "Barista", "Doctor", "Nurse", "Realtor"];
 var selected_roles = [];
 $(function(){
+    if(checkUserToken()){
+        window.location.href = "../profile";
+        return;
+    }
     $("#header2").load("../layout/header2.html");
     for(var i=51;i<=60;i++){
         progressBar(i);

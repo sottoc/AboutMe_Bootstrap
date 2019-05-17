@@ -1,4 +1,8 @@
 $(function(){
+    if(checkUserToken()){
+        window.location.href = "../profile";
+        return;
+    }
     $("#header2").load("../layout/header2.html");
     $(".upload-input").css("display", "none");
     for(var i=21;i<=30;i++){

@@ -1,0 +1,94 @@
+figure, figure a img {
+    width:300px;
+    height:300px
+}
+
+figure {
+    margin: auto;
+}
+
+.user-caption {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.user-caption span {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#user_visit_button {
+    width: 40%;
+    margin: auto;
+}
+
+@media only screen and (max-width: 720px) {
+    #user_visit_button {
+        width: 100%;
+        margin: auto;
+    }
+}
+
+#user_description {
+    width: 580px;
+    color: #330884;
+    margin: auto;
+}
+
+@media only screen and (max-width: 775px) {
+    #user_description {
+        width: 100%;
+    }
+}
+
+#custom_menu {
+    position: fixed;
+    top: 15rem;
+    right: -320px;
+    width: 320px;
+    height: 100%;
+    background: white;
+    border: 1px solid #4829B2;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media only screen and (max-width: 1600px) {
+    #custom_menu{
+        top: 200px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #custom_menu{
+        top: 100px;
+    }
+}
+
+.accordion-group .accordion i{
+    font-size: 23px;
+    color: #4829B2;
+    flex-grow: 0;
+    padding-right: 20px;
+}
+
+.accordion-group .accordion h5{
+    color: #4829B2;
+    font-weight: 600;
+}
+
+.accordion-group .accordion p{
+    font-size: 15px;
+    color: #9a8f8f;
+}
+
+#edit_description textarea{
+    width: 100%;
+    height: 200px;
+}
+
+.accordion-group .accordion .accordion-content-wrapper button{
+    width: 100%;
+}
+
+#edit_design figure, #edit_design figure a img {
+    width:200px !important;
+    height:200px !important;
+}

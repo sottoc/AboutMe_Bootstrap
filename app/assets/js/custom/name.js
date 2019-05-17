@@ -1,4 +1,8 @@
 $(function(){
+    if(checkUserToken()){
+        window.location.href = "../profile";
+        return;
+    }
     $("#header2").load("../layout/header2.html");
     $("#firstname_required_tips").css("display", "none");
     $("#secondname_required_tips").css("display", "none");

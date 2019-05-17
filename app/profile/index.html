@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Profile</title>
+    <link rel="stylesheet" href="../assets/css/vendor.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <!--  include custom css -->
+    <link rel="stylesheet" href="../assets/css/custom/profile.css" />
+    <link rel="stylesheet" href="../assets/css/custom/global.css" />
+
+  </head>
+  <body class="bg-light">
+
+    <!-- header -->
+    <div id="header3"></div>
+    <!-- header -->
+
+    <section class="bg-purple">
+        
+    </section>
+
+    <section id="default" class="component pt-3">
+        <div>
+            <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                      <figure id="user_figure" class="user user-circle">
+                        <a href="" class="user-photo">
+                            <img id="user_avatar" src="../assets/images/default-avatar.png" alt="Avatar">
+                        </a>
+                        <figcaption class="user-caption">
+                            <h4 id="user_name"></h4>
+                            <span id="user_title"></span>
+                            <ul class="socials socials-sm bordered">
+                            </ul>
+                        </figcaption>
+                      </figure>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card p-2">
+                            <a href="" class="card-img-container">
+                                <span class="card-header">
+                                    <a href="" target="_blank" id="user_visit_button" class="btn btn-primary"></a>
+                                </span>
+                            </a>
+                            <div class="card-body text-left">
+                              <div>
+                                  <p id="user_description" class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="custom_menu">
+      <div class="accordion-group" data-accordion-group>
+
+        <div class="accordion" data-accordion>
+          <div class="accordion-control" data-control>
+            <i class="icon-book-open"></i>  <h5>Bio</h5>
+          </div>
+          <div class="accordion-content" data-content>
+            <div class="accordion-content-wrapper">
+              <p>Learn more about you</p>
+              <button type="button" class="btn btn-sm btn-rounded btn-light" data-toggle="modal" data-target="#edit_description"><i class="icon-edit"></i> Edit</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion" data-accordion>
+            <div class="accordion-control" data-control>
+              <i class="icon-tablet"></i>  <h5>Appearence</h5>
+            </div>
+            <div class="accordion-content" data-content>
+              <div class="accordion-content-wrapper">
+                <p>Change your layout or photo</p>
+                <div>
+                    <button type="button" class="btn btn-sm btn-rounded btn-light" data-toggle="modal" data-target="#edit_photo"><i class="icon-edit"></i> Photo</button>
+                </div>
+                <div class="mt-1">
+                    <button type="button" class="btn btn-sm btn-rounded btn-light" onclick="openDesignModal()" data-toggle="modal" data-target="#edit_design"> <i class="icon-heart"></i> Design </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <div class="accordion" data-accordion>
+          <div class="accordion-control" data-control>
+            <i class="icon-cog"></i> <h5>Details</h5>
+          </div>
+          <div class="accordion-content" data-content>
+            <div class="accordion-content-wrapper">
+              <p>Update roles, interests and so on</p>
+              <div>
+                  <button type="button" class="btn btn-sm btn-rounded btn-light" data-toggle="modal" data-target="#edit_location"> <i class="icon-map-marker"></i> Location </button>
+              </div>
+              <div class="mt-1">
+                  <button type="button" class="btn btn-sm btn-rounded btn-light" data-toggle="modal" data-target="#edit_interests"> <i class="icon-heart"></i> Interests </button>
+              </div>
+              <div class="mt-1">
+                  <button type="button" class="btn btn-sm btn-rounded btn-light" data-toggle="modal" data-target="#edit_eccupation"> <i class="icon-wrench"></i> Occupation </button>
+              </div>
+              <div class="mt-1">
+                  <button type="button" class="btn btn-sm btn-rounded btn-light" data-toggle="modal" data-target="#edit_education"> <i class="icon-pencil"></i> Education </button>
+              </div>
+              <div class="mt-1">
+                  <button type="button" class="btn btn-sm btn-rounded btn-light" data-toggle="modal" data-target="#edit_social_links"> <i class="icon-link"></i> Social Links </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion" data-accordion>
+          <div class="accordion-control" data-control>
+            <i class="icon-cogs"></i> <h5>Account</h5>
+          </div>
+          <div class="accordion-content" data-content>
+            <div class="accordion-content-wrapper">
+              <p>Update your personal settings</p>
+              <div>
+                  <button type="button" class="btn btn-sm btn-rounded btn-light" data-toggle="modal" data-target="#edit_name"> <i class="icon-map-marker"></i> Name </button>
+              </div>
+              <div class="mt-1">
+                  <button type="button" class="btn btn-sm btn-rounded btn-light" data-toggle="modal" data-target="#edit_email"> <i class="icon-envelope"></i> Email </button>
+              </div>
+              <div class="mt-1">
+                  <button type="button" class="btn btn-sm btn-rounded btn-light" data-toggle="modal" data-target="#edit_password"> <i class="icon-lock"></i> Password </button>
+              </div>
+              <div class="mt-1">
+                  <button type="button" class="btn btn-sm btn-rounded btn-light" data-toggle="modal" data-target="#edit_logout"> <i class="icon-power-off"></i> Log Out </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <script src="../assets/js/vendor.js"></script>
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/jscolor.js"></script>
+    <script src="../assets/js/custom/global.js"></script>
+    <script src="../assets/js/custom/profile.js"></script>
+  </body>
+</html>
+
+<!-- Edit description modal -->
+<div class="modal fade" id="edit_description" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header justify-content-center">
+        <h5> Edit about you </h5>
+      </div>
+      <div class="modal-body text-center">
+          <textarea id="textarea_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias alias ipsam minima, dolore! Modi enim porro neque quaerat blanditiis. Ipsa aliquam quam maxime rerum eum accusamus nulla, molestiae soluta repellendus!</textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-block" onclick="saveDescription()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Change photo -->
+<div class="modal fade" id="edit_photo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header justify-content-center">
+          <h5> You can change photo </h5>
+        </div>
+        <div class="modal-body text-center">
+            <img id="avatar_temp" src="../assets/images/default-avatar.png" width="300" height="300" alt="Avatar">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn-block" onclick="changePhoto()">Change Photo</button>
+          <input type="file" style="display: none;">
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Change design -->
+<div class="modal fade" id="edit_design" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header justify-content-center">
+          <h5> You can change design </h5>
+        </div>
+        <div class="modal-body text-center">
+            <div class="template-design boxed scaling pt-2" template-id="1">
+                <figure class="user">
+                    <a href="" class="user-photo">
+                        <img class="user-avatar" src="../assets/images/demo/user-2.jpg" alt="Avatar">
+                    </a>
+                    <!-- <figcaption class="user-caption">
+                        <h4></h4>
+                        <span></span>
+                    </figcaption> -->
+                </figure>
+                <div class="mt-2">
+                    <div class="card" style="margin:5px 15px">
+                        <a href="" class="card-img-container">
+                            <span class="card-header">
+                                <a href="" class="btn btn-sm btn-primary mt-2" style="width:100px;margin:auto">Visit</a>
+                            </span>
+                        </a>
+                        <div class="card-body">
+                            <p class="card-text">This is user description content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer pt-0" style="display: block">
+          <div class="pr-3 pl-3">
+            <div>
+                Circle : <input type="checkbox">
+            </div> 
+            <div class="float:right">
+              Color change <input class="jscolor" value="ab2567">
+            </div>
+          </div>
+          <div class="mt-1">
+              <button type="button" class="btn btn-primary btn-block" onclick="saveDesign()">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,5 +1,8 @@
 $(function(){
     $("#custom_footer").load("layout/footer.html");
-    $("#header1").load("layout/header1.html");
-
+    if(checkUserToken()){
+        $("#header1").load("layout/header1_in.html");
+    } else{
+        $("#header1").load("layout/header1.html");
+    }
 });
