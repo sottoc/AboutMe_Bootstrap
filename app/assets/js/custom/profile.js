@@ -1,5 +1,6 @@
 var currentUser = {};
 var token = JSON.parse(localStorage.getItem("token"));
+var username = "";
 $(function(){
     $("#header3").load("../layout/header3.html");
     //$("#custom_menu").load("../layout/menu.html");
@@ -16,7 +17,9 @@ $(function(){
         contentType: false,
         success: function (data) {
             currentUser["user"] = data;
+            username = data['username'];
             getUserProfile(data['username']);
+            getUserExtraInfo(data['username']);
         }
     });
     localStorage.setItem("custom_menu_status", "hide");
@@ -59,6 +62,14 @@ $(function(){
         });
     });
 
+    $('#checkbox').change(function(){
+        if(this.checked) {
+            $("#edit_design figure").addClass("user-circle");
+        } else {
+            $("#edit_design figure").removeClass("user-circle");
+        }
+    })
+
 });
 
 function getUserProfile(username) {
@@ -78,6 +89,30 @@ function getUserProfile(username) {
             currentUser["profile"] = data[0];
             storeCurrentUser(currentUser);
             setUserProfile();
+        }
+    });
+}
+
+function getUserExtraInfo(username){
+    var formdata = new FormData();
+    formdata.append("username", username);
+    var url = api_endpoint + "/api/extrainfo";
+    headerParams = {'Authorization':'Bearer ' + token["access_token"]};
+    jQuery.ajax({
+        url: url,
+        type: "POST",
+        headers: headerParams,
+        data: formdata,
+        processData: false,
+        contentType: false,
+        success: function (data) {
+            data = JSON.parse(data);
+            localStorage.setItem('extrainfo', JSON.stringify(data));
+            for(var i=0;i<data.length;i++){
+                if(data[i].key == "color"){
+                    $("#default").css('background', '#'+data[i].value);
+                } 
+            }
         }
     });
 }
@@ -160,6 +195,57 @@ function changePhoto() {
 
 function openDesignModal() {
     var profile = JSON.parse(localStorage.getItem("currentUser"))['profile'];
-    var username = profile["username"];
     $("#edit_design figure img").attr('src', api_endpoint + profile['avatar']);
+    if(profile.template == "2") {
+        $('input[type="checkbox"]').prop('checked', true);
+        $("#edit_design figure").addClass("user-circle");
+    } else if(profile.template == "1") {
+        $('input[type="checkbox"]').prop('checked', false);
+        $("#edit_design figure").removeClass("user-circle");
+    }
+    var extrainfo = JSON.parse(localStorage.getItem('extrainfo'));
+    for(var i=0;i<extrainfo.length;i++){
+        if(extrainfo[i].key == "color"){
+            var value = extrainfo[i].value;
+            $('.jscolor').val(value);
+            $('.jscolor').css('background-color', "#"+value);
+            $(".template-design").css('background', "#"+value);
+        }
+    }
+    
+}
+
+function changeColor(e){
+    $(".template-design").css('background', '#'+$(e).val());
+}
+
+function saveDesign(){
+    var formdata = new FormData();
+    formdata.append("username", username);
+    var template = "1";
+    if($('input[type="checkbox"]').prop('checked') == true) {
+        template = "2"
+    }
+    formdata.append("template", template);
+    formdata.append("color", $(".jscolor").val());
+    var url = api_endpoint + "/api/update_design";
+    headerParams = {'Authorization':'Bearer ' + token["access_token"]};
+    jQuery.ajax({
+        url: url,
+        type: "POST",
+        headers: headerParams,
+        data: formdata,
+        processData: false,
+        contentType: false,
+        success: function (data) {
+            data = JSON.parse(data);
+            $("#default").css('background', '#'+$('.jscolor').val());
+            if(template == "1") {
+                $("figure").removeClass("user-circle");
+            } else {
+                $("figure").addClass("user-circle");
+            }
+            $('#edit_design').modal('toggle');
+        }
+    });
 }
